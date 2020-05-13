@@ -11,5 +11,5 @@ pkg_ref_cache.covr_coverage <- function(x, ...) {
 #' @importFrom covr package_coverage
 pkg_ref_cache.covr_coverage.pkg_source <- function(x, ...) {
   expr <- bquote(tools::testInstalledPackage(.(x$name), types = 'tests'))
-  covr::package_coverage(type = "none", code = deparse(expr))
+  covr::package_coverage(path = x$path, type = "none", code = deparse(expr))
 }
